@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('producto_bodega', function (Blueprint $table) {
             $table->id();
-            $table->integer('stock maximo');
-            $table->integer('stock minimo');
+            $table->integer('stock_maximo');
+            $table->integer('stock_minimo');
 
             $table->unsignedBigInteger('producto_id'); 
             $table->foreign('producto_id')

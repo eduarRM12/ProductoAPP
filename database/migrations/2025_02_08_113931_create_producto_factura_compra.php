@@ -20,6 +20,11 @@ return new class extends Migration
             $table->decimal('valor_descuento', 10, 2);
             $table->decimal('iva', 3, 1);
             $table->decimal('descuento', 3, 1);
+            $table->unsignedBigInteger('producto_id'); 
+            $table->foreign('producto_id')
+                  ->references('id') 
+                  ->on('producto')
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }
